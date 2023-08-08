@@ -146,10 +146,10 @@ export function autoUpdate(
 
   const ancestors =
     ancestorScroll || ancestorResize
-      ? [
+      ? [...new Set(...[
           ...(referenceEl ? getOverflowAncestors(referenceEl) : []),
           ...getOverflowAncestors(floating),
-        ]
+        ])]
       : [];
 
   ancestors.forEach((ancestor) => {
